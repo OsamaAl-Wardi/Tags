@@ -1,0 +1,59 @@
+<!-- scene descripton output page -->
+<!DOCTYPE html>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Success</title>
+</head>
+<body>
+    <style>
+        .jumbotron{
+        background : #96c4ec !important;
+        }
+    </style>
+    <div class="jumbotron text-center">
+            <h1>Video Transcriber</h1>
+            <p>video to text</p> 
+    </div>
+    <style type="text/css">
+        video {
+            margin: 0 auto;
+            display: block;
+            width: 500px;
+        }
+    </style>
+    <video id="myVideo" width="900" height ="600" controls>
+        <source src = "{{link}}" type="video/mp4" style="video.currentTime = seconds;"> 
+    </video>
+
+    <p>
+    % for scene in data:
+    <style type="text/css">
+        .card {
+            margin: 0 auto;
+            display: block;
+            width: 500px;
+            border: solid white 40px;
+        }
+    </style>
+    <div class="card bg-light text-dark w-75 text-center d-flex justify-content-center">
+        <div class="card-body"></div>
+        <h5 class="card-title">{{scene}}</h5>
+        <p class="card-text">
+            % for word in data[scene]:
+                {{word}} 
+            % end
+        </p>
+        <button onclick="setCurTime()" type="button">Watch on video</button>
+    </div>
+    % end
+    </p>
+    
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+</body>
+</html>
