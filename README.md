@@ -6,12 +6,9 @@ Features:
 - annotate scenes: frames that share similarities and settings i.e. environment or context.
 - annotate video: (ultimate goal)
 
-My role: I implemented the python backbone of the algorithm which discretises the video into
-frames and uses the google cloud vision API to detect objects in the scene.
+My role: I implemented the python backbone of the algorithm which discretises the video into frames and uses the google cloud vision API to detect objects in the scene.
 
 Other contributors:
 - Dung Huynh
 - Henok Seifu
 - Melvin Wolf
-- Osama Al-Wardi
-- Saurav Dahal
